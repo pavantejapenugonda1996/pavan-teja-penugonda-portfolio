@@ -95,6 +95,24 @@
     requestAnimationFrame(tick);
   });
 
+  // Case study tabs
+  const tabs = document.querySelectorAll(".case-tab");
+  const panels = document.querySelectorAll(".case-panel");
+  tabs.forEach((tab) =>
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", String(on));
+      });
+      panels.forEach((p) => {
+        const on = p.id === tab.dataset.case;
+        p.hidden = !on;
+        p.classList.toggle("active", on);
+      });
+    })
+  );
+
   // Active nav link
   const links = [...menu.querySelectorAll("a")];
   const sections = links.map((a) => document.querySelector(a.getAttribute("href")));

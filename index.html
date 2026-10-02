@@ -35,6 +35,7 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#case-studies">Case Studies</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -101,7 +102,7 @@
             <div>
               <strong>EY GDS</strong>
               <span>Senior Software Engineer &middot; 2021 - 2023</span>
-              <em>KYC platform for financial clients</em>
+              <em>KYC platform development &amp; performance</em>
             </div>
           </li>
           <li class="company reveal">
@@ -341,8 +342,8 @@
           </article>
 
           <article class="card project reveal">
-            <h3>KYC Platform Performance Overhaul</h3>
-            <p>Led performance improvement for a Flask-based, microservice KYC application at EY GDS.</p>
+            <h3>KYC Platform Development &amp; Performance</h3>
+            <p>Worked as a software developer on a Flask-based, microservice KYC application at EY GDS, building features and leading performance improvement.</p>
             <ul>
               <li>Multi-threading, SQL query optimization, indexing, and AKS configuration changes improved performance by 200%.</li>
               <li>Built image classification and text detection for the KYC workflow.</li>
@@ -355,7 +356,215 @@
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="case-studies" class="section">
+      <div class="container">
+        <h2 class="section-title">Problem solving in action</h2>
+        <p class="section-sub">How I take a messy business problem to a working, explainable system: <strong>Problem</strong> &rarr; <strong>Approach</strong> &rarr; <strong>Solution</strong> &rarr; <strong>Architecture</strong>. Pick a case study.</p>
+
+        <div class="case-tabs" role="tablist" aria-label="Case studies">
+          <button class="case-tab active" role="tab" aria-selected="true" aria-controls="case-1" data-case="case-1">Regulatory Coverage Agents</button>
+          <button class="case-tab" role="tab" aria-selected="false" aria-controls="case-2" data-case="case-2">Agentic KYC Review</button>
+          <button class="case-tab" role="tab" aria-selected="false" aria-controls="case-3" data-case="case-3">KYC Platform Development &amp; Performance</button>
+          <button class="case-tab" role="tab" aria-selected="false" aria-controls="case-4" data-case="case-4">TM Alert Classifier</button>
+          <button class="case-tab" role="tab" aria-selected="false" aria-controls="case-5" data-case="case-5">OSINT &amp; Multimodal RAG</button>
+        </div>
+
+        <!-- Case 1 -->
+        <div id="case-1" class="case-panel active" role="tabpanel">
+          <div class="steps">
+            <article class="step s-problem">
+              <span class="step-num">01</span><h3>Problem</h3>
+              <p>Regulated firms must prove their controls cover clauses from many regulators (FDA, EMA, SEC, ISO). Mapping them by hand is slow, inconsistent, and hard to defend in an audit.</p>
+            </article>
+            <article class="step s-approach">
+              <span class="step-num">02</span><h3>Approach</h3>
+              <p>Split the work into clear roles: ingest, retrieve evidence, score, explain. Ground the LLM in real documents with RAG instead of model memory, and require a citation for every claim.</p>
+            </article>
+            <article class="step s-solution">
+              <span class="step-num">03</span><h3>Solution</h3>
+              <p>Coverage-scoring and gap-analysis agents map organizational controls to regulatory clauses, with GPT-4o reasoning over retrieved evidence and auto-generated reports.</p>
+            </article>
+            <article class="step s-result">
+              <span class="step-num">04</span><h3>Impact</h3>
+              <p class="metric">60-70%</p>
+              <p>less manual review effort, with explainable citations that improve audit readiness.</p>
+            </article>
+          </div>
+          <h3 class="arch-title">Architecture</h3>
+          <div class="arch" aria-label="Architecture flow">
+            <div class="node"><b>Sources</b>Regulations, guidance notes, past audits</div>
+            <div class="node"><b>Ingest</b>Parse, chunk, embed</div>
+            <div class="node"><b>Vector store</b>Chroma</div>
+            <div class="node"><b>RAG retrieval</b>Evidence per clause</div>
+            <div class="node group"><b>Agent team</b><span>Coverage scoring</span><span>Gap analysis</span><span>GPT-4o reasoning</span></div>
+            <div class="node"><b>Report</b>Cited, audit-ready output</div>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div id="case-2" class="case-panel" role="tabpanel" hidden>
+          <div class="steps">
+            <article class="step s-problem">
+              <span class="step-num">01</span><h3>Problem</h3>
+              <p>KYC reviewers manually inspect identity documents, hunt for inconsistencies and fraud signals, and often can't explain why a case was approved or rejected.</p>
+            </article>
+            <article class="step s-approach">
+              <span class="step-num">02</span><h3>Approach</h3>
+              <p>Model the review as a team of specialised agents running asynchronously for throughput, with a human reviewer in the loop and every decision carrying a confidence score and reasoning trace.</p>
+            </article>
+            <article class="step s-solution">
+              <span class="step-num">03</span><h3>Solution</h3>
+              <p>GPT-4 Vision extracts and validates document data and flags fraud. Clarification and decision agents resolve ambiguities and automate approval workflows.</p>
+            </article>
+            <article class="step s-result">
+              <span class="step-num">04</span><h3>Impact</h3>
+              <p class="metric">Explainable</p>
+              <p>decisions with confidence scores, audit-ready reasoning traces, and real-time reviewer feedback.</p>
+            </article>
+          </div>
+          <h3 class="arch-title">Architecture</h3>
+          <div class="arch" aria-label="Architecture flow">
+            <div class="node"><b>React UI</b>Reviewer feedback in real time</div>
+            <div class="node"><b>FastAPI</b>Async orchestration</div>
+            <div class="node group"><b>Skill-based agents</b><span>Vision extraction</span><span>Fraud / inconsistency</span><span>Clarification</span><span>Decision</span></div>
+            <div class="node"><b>Tool layer</b>MCP servers for data and tools</div>
+            <div class="node"><b>Audit trail</b>Confidence + reasoning traces</div>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div id="case-3" class="case-panel" role="tabpanel" hidden>
+          <p class="case-role"><strong>My role: Software Developer</strong> &middot; KYC platform development and performance improvement at EY GDS</p>
+          <div class="steps">
+            <article class="step s-problem">
+              <span class="step-num">01</span><h3>Problem</h3>
+              <p>A Flask-based KYC microservice application needed new capabilities and was slow under load, missing SLAs, and hard to troubleshoot because there was little visibility into where time was going.</p>
+            </article>
+            <article class="step s-approach">
+              <span class="step-num">02</span><h3>Approach</h3>
+              <p>Measure before changing anything: add structured logging and distributed tracing, find the real bottlenecks, fix the highest-impact ones first, then verify with performance tests.</p>
+            </article>
+            <article class="step s-solution">
+              <span class="step-num">03</span><h3>Solution</h3>
+              <p>Developed new features for the KYC platform, including image classification and text detection, then improved performance with multi-threading, SQL query optimization, indexing, and AKS configuration changes.</p>
+            </article>
+            <article class="step s-result">
+              <span class="step-num">04</span><h3>Impact</h3>
+              <p class="metric">200%</p>
+              <p>faster application performance and much faster root-cause analysis.</p>
+            </article>
+          </div>
+          <h3 class="arch-title">Architecture</h3>
+          <div class="arch" aria-label="Architecture flow">
+            <div class="node"><b>Clients</b>KYC users and systems</div>
+            <div class="node"><b>Flask microservices</b>Running on AKS</div>
+            <div class="node"><b>Threaded workers</b>Parallel processing</div>
+            <div class="node"><b>SQL database</b>Tuned queries and indexes</div>
+            <div class="node group"><b>Observability</b><span>Structured logging</span><span>Distributed tracing</span></div>
+          </div>
+        </div>
+
+        <!-- Case 4 -->
+        <div id="case-4" class="case-panel" role="tabpanel" hidden>
+          <div class="steps">
+            <article class="step s-problem">
+              <span class="step-num">01</span><h3>Problem</h3>
+              <p>Transaction monitoring generates huge alert volumes, and most turn out to be false positives. Analysts spend their time triaging noise instead of investigating real risk.</p>
+            </article>
+            <article class="step s-approach">
+              <span class="step-num">02</span><h3>Approach</h3>
+              <p>Frame it as supervised classification on historical, analyst-dispositioned alerts. Start with simple baselines, optimize for catching true risk, and keep the output explainable for compliance.</p>
+            </article>
+            <article class="step s-solution">
+              <span class="step-num">03</span><h3>Solution</h3>
+              <p>Random Forest and XGBoost models classify alerts, and visualization dashboards turn model output into insight stakeholders can act on.</p>
+            </article>
+            <article class="step s-result">
+              <span class="step-num">04</span><h3>Impact</h3>
+              <p class="metric">91%</p>
+              <p>classification accuracy with significantly fewer false positives.</p>
+            </article>
+          </div>
+          <h3 class="arch-title">Architecture</h3>
+          <div class="arch" aria-label="Architecture flow">
+            <div class="node"><b>Alert data</b>Transactions and analyst dispositions</div>
+            <div class="node"><b>ETL + validation</b>Cleansing and normalization</div>
+            <div class="node"><b>Features</b>Behavioural and customer signals</div>
+            <div class="node group"><b>Models</b><span>Random Forest</span><span>XGBoost</span></div>
+            <div class="node"><b>Dashboards</b>Scores, drivers, insights</div>
+          </div>
+        </div>
+
+        <!-- Case 5 -->
+        <div id="case-5" class="case-panel" role="tabpanel" hidden>
+          <div class="steps">
+            <article class="step s-problem">
+              <span class="step-num">01</span><h3>Problem</h3>
+              <p>Analysts face large volumes of audio, image, video, and text intelligence. Finding and understanding what matters across all of it by hand doesn't scale.</p>
+            </article>
+            <article class="step s-approach">
+              <span class="step-num">02</span><h3>Approach</h3>
+              <p>Turn every modality into searchable text with metadata, put it behind one retrieval layer, and build each capability as a small proof-of-concept service before scaling it.</p>
+            </article>
+            <article class="step s-solution">
+              <span class="step-num">03</span><h3>Solution</h3>
+              <p>LLM POCs for audio translation, transcription, and summarization, plus image and video summarization, text analytics, and a RAG model for OSINT search.</p>
+            </article>
+            <article class="step s-result">
+              <span class="step-num">04</span><h3>Impact</h3>
+              <p class="metric">Multimodal</p>
+              <p>insights from one search experience, delivered on scalable microservices.</p>
+            </article>
+          </div>
+          <h3 class="arch-title">Architecture</h3>
+          <div class="arch" aria-label="Architecture flow">
+            <div class="node"><b>Media inputs</b>Audio, image, video, text</div>
+            <div class="node group"><b>Modality microservices</b><span>Transcribe / translate</span><span>Image summary</span><span>Video summary</span><span>Text analytics</span></div>
+            <div class="node"><b>Text + metadata</b>Timestamps and sources</div>
+            <div class="node"><b>Search layer</b>Retrieval over OSINT data</div>
+            <div class="node"><b>RAG answers</b>Grounded in source content</div>
+          </div>
+        </div>
+
+        <h3 class="arch-title approach-title">How I'd approach it</h3>
+        <p class="section-sub approach-sub">Whichever case it is, I approach it as a software engineer and as an AI engineer. As a software engineer I understand the requirement, design it simply, build it in small tested pieces, and make sure it holds up in production. As an AI engineer I make sure the models are grounded, evaluated, and explainable before anything goes live.</p>
+        <div class="lenses">
+          <article class="lens lens-dev">
+            <h4><span class="lens-tag">&lt;/&gt;</span>As a software engineer</h4>
+            <ul>
+              <li><strong>Start with requirements.</strong> Gather the need with stakeholders, break it into user stories, and agree on acceptance criteria before writing code.</li>
+              <li><strong>Profile, don't guess.</strong> Logging and distributed tracing show where the time goes, so effort goes to the biggest win first.</li>
+              <li><strong>Small services, clear contracts.</strong> Each microservice has a defined API and can be developed, tested, scaled, and deployed independently.</li>
+              <li><strong>Resilient by design.</strong> Async processing with timeouts, retries, and queues, plus idempotent, versioned pipelines.</li>
+              <li><strong>Tests that guard quality.</strong> Unit, integration, and regression tests, with load tests as release gates.</li>
+              <li><strong>Ship safely.</strong> CI/CD pipelines, feature flags, and rollback, with structured logs and traces so issues are fast to root-cause.</li>
+            </ul>
+          </article>
+          <article class="lens lens-ai">
+            <h4><span class="lens-tag">AI</span>As an AI engineer</h4>
+            <ul>
+              <li><strong>Ground, don't guess.</strong> Retrieval first: models answer from retrieved evidence with citations, and "insufficient evidence" is a valid output.</li>
+              <li><strong>Narrow skills over one giant prompt.</strong> Specialised, skill-based agents with structured outputs are easier to test, swap, and improve.</li>
+              <li><strong>Don't trust the model alone.</strong> Pair LLM output with deterministic checks, and route low-confidence cases to a human with the reasoning attached.</li>
+              <li><strong>Pick the metric by risk.</strong> Accuracy can hide missed risk, so I track recall, false-positive reduction, and citation correctness, using time-based splits to avoid leakage.</li>
+              <li><strong>Evaluate on the hard cases</strong> with reviewer-labelled samples, not just clean data, before anything goes live.</li>
+              <li><strong>Explain and guard.</strong> Confidence scores, feature drivers, schema-validated outputs, least-privilege MCP tools, and drift monitoring.</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3 class="arch-title playbook-title">My problem-solving playbook</h3>
+        <ol class="playbook">
+          <li><b>Understand</b>Start from the business problem, users, and risk, not the tool.</li>
+          <li><b>Design</b>Pick the simplest architecture that meets the need and can grow.</li>
+          <li><b>Build small</b>Ship thin vertical slices, with tests, so feedback comes early.</li>
+          <li><b>Evaluate</b>Prove it on real data with the metrics that matter to the business.</li>
+          <li><b>Operate</b>Monitor, explain, and keep improving after launch.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="experience" class="section alt">
       <div class="container">
         <h2 class="section-title">Experience</h2>
         <div class="timeline">
@@ -418,7 +627,7 @@
       </div>
     </section>
 
-    <section id="education" class="section alt">
+    <section id="education" class="section">
       <div class="container">
         <h2 class="section-title">Education</h2>
         <article class="card reveal edu">
@@ -429,7 +638,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section alt">
       <div class="container contact">
         <h2 class="section-title">Let's connect</h2>
         <p class="contact-intro">Interested in working together or just want to talk AI and compliance tech? Reach out through any of the options below.</p>
