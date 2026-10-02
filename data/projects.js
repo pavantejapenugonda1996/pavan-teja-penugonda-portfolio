@@ -20,6 +20,7 @@
       tech: ['llms', 'gpt', 'rag', 'agentic', 'python', 'chroma', 'regcov'],
       impact: { metric: '60–70%', label: 'reduction in manual review effort' },
       flow: [
+        { label: 'Requirement gathering', info: 'Requirements are gathered directly with client and compliance stakeholders and turned into clear, testable acceptance criteria.' },
         { label: 'Document ingestion', info: 'Regulations, guidance notes, and historical audits are parsed, chunked, and embedded into a vector store.' },
         { label: 'RAG', info: 'Retrieves the clauses and evidence relevant to each control, so GPT-4o reasons over source text instead of model memory.' },
         { label: 'Agent orchestration', info: 'Coverage-scoring and gap-analysis agents are coordinated with plan-and-delegate steps.' },
@@ -39,6 +40,7 @@
       tech: ['llms', 'gpt', 'agentic', 'python', 'fastapi', 'react', 'js', 'kyc'],
       impact: { metric: 'Explainable', label: 'decisions with confidence scores and audit trails' },
       flow: [
+        { label: 'Requirement gathering', info: 'Review rules, risk thresholds, and reviewer needs are gathered from client and compliance stakeholders before design starts.' },
         { label: 'Document', info: 'An identity document is submitted for review through the React interface.' },
         { label: 'GPT Vision', info: 'A GPT-4 Vision model reads the document, including layout, text, and visual features.' },
         { label: 'Data extraction', info: 'Structured fields such as name, date of birth, and document numbers are extracted into a schema.' },
@@ -60,6 +62,7 @@
       tech: ['ml', 'rf', 'xgboost', 'python', 'sql', 'pipelines', 'tm', 'aml'],
       impact: { metric: '91%', label: 'classification accuracy' },
       flow: [
+        { label: 'Requirement gathering', info: 'Alert-handling goals and false-positive pain points are gathered from client and analyst stakeholders.' },
         { label: 'Transaction data', info: 'Historical alerts and the analyst dispositions that closed them form the training data.' },
         { label: 'Feature engineering', info: 'Cleaned, validated data is turned into behavioural and customer signals the models can learn from.' },
         { label: 'ML model', info: 'Random Forest and XGBoost classifiers are trained and compared on held-out data.' },
@@ -91,14 +94,15 @@
     {
       id: 'perf',
       num: '05',
-      title: 'Performance Engineering',
-      kind: 'Performance improvement of a Flask-based KYC microservice platform',
+      title: 'KYC Platform Optimization',
+      kind: 'KYC website development and performance improvement',
       context: 'EY GDS · 2021 to 2023',
-      problem: 'A KYC microservice application was slow under load and hard to troubleshoot.',
+      problem: 'A KYC web application built on Flask microservices was slow under load and hard to troubleshoot.',
       badges: ['Python', 'Flask', 'SQL', 'AKS', 'Distributed tracing', 'Multi-threading'],
       tech: ['python', 'flask', 'sql', 'microservices', 'azure', 'kyc'],
       impact: { metric: '200%', label: 'application performance improvement' },
       flow: [
+        { label: 'KYC website development', info: 'Features for the Flask-based KYC application were built, including image classification and text detection.' },
         { label: 'Application bottleneck', info: 'Slow responses under load, with little visibility into where the time was going.' },
         { label: 'Profiling', info: 'Structured logging and distributed tracing show which calls and queries dominate the latency.' },
         { label: 'Code optimization', info: 'Hot paths in the service code are fixed first, based on the measurements.' },
@@ -120,6 +124,7 @@
       tech: ['python', 'sql', 'pipelines', 'aml', 'bsa', 'ofac', 'pep', 'edd', 'tm'],
       impact: { metric: 'Automated', label: 'validation and model-testing reports' },
       flow: [
+        { label: 'Requirement gathering', info: 'Assessment scope and validation needs are agreed with client and compliance stakeholders.' },
         { label: 'Source data', info: 'Data from multiple systems is pulled together for assessment.' },
         { label: 'ETL and validation', info: 'Optimized ETL pipelines cleanse the data and detect cross-system discrepancies.' },
         { label: 'OFAC test cases', info: 'Validation cases aligned with OFAC lists strengthen screening accuracy.' },

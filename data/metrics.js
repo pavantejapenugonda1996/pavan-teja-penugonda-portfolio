@@ -27,7 +27,7 @@
       value: 200,
       suffix: '%',
       label: 'Application Performance Improvement',
-      context: 'Production KYC microservice platform',
+      context: 'KYC website performance improvement',
       cta: 'View case study',
       target: { project: 'perf' }
     },

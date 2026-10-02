@@ -29,7 +29,7 @@
     {
       id: 'y2021',
       year: '2021',
-      headline: 'KYC / Microservices / Performance Engineering',
+      headline: 'KYC / Microservices / Platform Optimization',
       role: 'Senior Software Engineer',
       org: 'EY GDS · Bangalore, Karnataka',
       period: '05/2021 – 08/2023',
@@ -75,6 +75,7 @@
       tech: ['Python', 'SQL', 'Random Forest', 'XGBoost', 'Actimize', 'OFAC'],
       responsibilities: [
         'Perform AML gap assessments and design technical workflows to detect cross-system discrepancies.',
+        'Work directly with clients and stakeholders to gather requirements and translate them into technical solutions.',
         'Develop Python and SQL data validation tools with cross-functional teams.',
         'Automate stress testing and model validation for OFAC, Red Flags, and Actimize models.'
       ],
@@ -91,6 +92,7 @@
       tech: ['GPT-4o', 'GPT-4 Vision', 'RAG', 'Agents', 'MCP servers', 'FastAPI', 'React'],
       responsibilities: [
         'Design agentic compliance and KYC systems using RAG, GPT-4o, and GPT-4 Vision.',
+        'Lead client-facing requirement gathering with stakeholders before designing each system.',
         'Build deep agents and skill-based agents with tools exposed through MCP servers.'
       ],
       accomplishments: ['Agentic regulatory coverage system reduced manual review effort by 60–70%.'],
